@@ -19,6 +19,7 @@ var app = app || {};
 		events: {
 			'click .toggle': 'toggleCompleted',
 			'click .edit-btn': 'edit',
+			'click .priority-btn': 'priority',
 			'dblclick label': 'edit',
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
@@ -75,6 +76,11 @@ var app = app || {};
 		edit: function () {
 			this.$el.addClass('editing');
 			this.$input.focus();
+		},
+
+		priority:function(){
+			this.$el.toggleClass('priority');
+			console.log('priority');
 		},
 
 		// Close the `"editing"` mode, saving changes to the todo.
